@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ReservasZ4S</string>
+
+    <string name="h10_11">10-11</string>
+    <string name="h11_12">11-12</string>
+    <string name="h12_13">12-13</string>
+    <string name="h13_14">13-14</string>
+    <string name="h14_15">14-15</string>
+    <string name="h15_16">15-16</string>
+    <string name="h16_17">16-17</string>
+    <string name="h17_18">17-18</string>
+    <string name="h18_19">18-19</string>
+    <string name="h19_20">19-20</string>
+    <string name="h20_21">20-21</string>
+    <string name="h21_22">21-22</string>
+
+    <string name="padel1">Padel 1</string>
+    <string name="padel2">Padel 2</string>
+    <string name="padel3">Padel 3</string>
+    <string name="padel4">Padel 4</string>
+    <string name="tenis1">Tenis 1</string>
+    <string name="tenis2">Tenis 2</string>
+
+</resources>

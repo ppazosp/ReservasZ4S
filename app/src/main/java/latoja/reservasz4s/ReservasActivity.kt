@@ -525,7 +525,13 @@ class ReservasActivity : AppCompatActivity(), PrintingCallback {
                 .setNewLinesAfter(1)
                 .build())
 
-        printables.add(RawPrintable.Builder(byteArrayOf(100)).build())
+        printables.add(
+            TextPrintable.Builder()
+                .setText("\n\n\n")
+                .setCharacterCode(DefaultPrinter.Companion.CHARCODE_PC1252)
+                .setEmphasizedMode(DefaultPrinter.Companion.EMPHASIZED_MODE_BOLD)
+                .setNewLinesAfter(1)
+                .build())
 
 
         printing?.print(printables)

@@ -176,10 +176,11 @@ class ReservasActivity : AppCompatActivity(), PrintingCallback {
                         val parts = view.text.toString().split("\n\n")
 
                         val name = parts[1]
+                        val hour2 = view.text.toString().split("\n\n")[0]
 
                         showCancellationDialog(
                             name,
-                            hour,
+                            hour2,
                             date, c, status)
                     }
 
@@ -507,6 +508,12 @@ class ReservasActivity : AppCompatActivity(), PrintingCallback {
     private fun printText(name:String, court:String, hour:String, date:String){
         val printables = ArrayList<Printable>()
 
+        val hours = hour.split("-")
+        val startHour = hours[0]
+        val endHour = hours[1]
+
+        val formattedHour = "$startHour:00-$endHour:00"
+
         val text =
             "******** RESERVAS LA TOJA ZONA-4 ********" +
                     "\n\n" +
@@ -514,7 +521,7 @@ class ReservasActivity : AppCompatActivity(), PrintingCallback {
                     "\n\n" +
                     "PISTA: $court" +
                     "\n\n" +
-                    "HORA: $hour" +
+                    "HORA: $formattedHour" +
                     "\n\n" +
                     "FECHA: $date" +
                     "\n\n" +

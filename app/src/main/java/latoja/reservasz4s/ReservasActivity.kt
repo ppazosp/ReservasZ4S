@@ -279,6 +279,9 @@ class ReservasActivity : AppCompatActivity(), PrintingCallback {
             .create()
 
         printButton.setOnClickListener {
+            requestBluetoothPermissions()
+            initPrinter()
+
             tryPrintText(name, court, hour, date)
 
             dialog.dismiss()
@@ -462,15 +465,15 @@ class ReservasActivity : AppCompatActivity(), PrintingCallback {
 
     private fun showPrinterDialog(name:String, court:String, hour:String, date:String) {
 
-        requestBluetoothPermissions()
-        initPrinter()
-
         val dialogView = layoutInflater.inflate(R.layout.dialog_print, null)
 
         AlertDialog.Builder(this)
             .setTitle("Reserva para $name de $hour el $date")
             .setView(dialogView)
             .setPositiveButton("Imprimir") { dialog, _ ->
+
+                requestBluetoothPermissions()
+                initPrinter()
 
                 tryPrintText(name, court, hour, date)
 
@@ -525,13 +528,7 @@ class ReservasActivity : AppCompatActivity(), PrintingCallback {
                 .setNewLinesAfter(1)
                 .build())
 
-        printables.add(
-            TextPrintable.Builder()
-                .setText("\n\n\n")
-                .setCharacterCode(DefaultPrinter.Companion.CHARCODE_PC1252)
-                .setEmphasizedMode(DefaultPrinter.Companion.EMPHASIZED_MODE_BOLD)
-                .setNewLinesAfter(1)
-                .build())
+        printables.add(RawPrintable.Builder(byteArrayOf(27, 100, 4)).build())
 
 
         printing?.print(printables)

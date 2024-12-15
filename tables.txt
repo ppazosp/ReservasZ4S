@@ -1,0 +1,8 @@
+create table
+  public.reservas (
+    name text not null default 'ANON'::text,
+    court public.court not null,
+    date timestamp without time zone not null,
+    status smallint not null default '0'::smallint,
+    constraint reserva_pkey primary key (date, court)
+  ) tablespace pg_default;

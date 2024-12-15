@@ -51,8 +51,8 @@ import java.time.format.DateTimeFormatter
 
 
 val supabase = createSupabaseClient(
-    supabaseUrl = "https://idwluubxdwohroglujkb.supabase.co",
-    supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlkd2x1dWJ4ZHdvaHJvZ2x1amtiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjM0MDkyNjYsImV4cCI6MjAzODk4NTI2Nn0.9VxfBiCzk7KTM7bKO-wwnMtm61V1IoA1j4l8spQYjDY"
+    supabaseUrl = "x",
+    supabaseKey = "x"
 ) {
     install(Postgrest)
 }

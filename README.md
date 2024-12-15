@@ -44,4 +44,4 @@ Additionally, the app supports printing tickets via Bluetooth.
 - **Language:** [Kotlin](https://kotlinlang.org/)
 - **IDE:** [Android Studio](https://developer.android.com/studio)
 - **Database:** [Supabase](https://supabase.com)
-- **Bluetooth:** For ticket printing functionality.
+- **Bluetooth:**
